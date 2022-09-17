@@ -8,7 +8,7 @@ public class RepositoryDTO {
     @JsonProperty(value = "full_name")
     private String fullName;
     @JsonProperty(value = "owner")
-    private OwnerDTO ownerDTO;
+    private OwnerDTO owner;
     private String name;
     @JsonProperty(value = "branches_url")
     private String branchUrl;
