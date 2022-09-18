@@ -1,4 +1,4 @@
-package com.mistela.gitrepos.dto;
+package com.mistela.gitrepos.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
@@ -12,7 +12,7 @@ public class RepositoryResponse {
     @JsonProperty(index = 1)
     private String name;
     @JsonProperty(value = "owner", index = 2)
-    private OwnerDTO owner;
+    private Owner owner;
     @JsonProperty(index = 3)
-    private Set<BranchDTO> branches;
+    private Set<Branch> branches;
 }

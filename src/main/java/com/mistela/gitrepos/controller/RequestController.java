@@ -1,6 +1,6 @@
 package com.mistela.gitrepos.controller;
 
-import com.mistela.gitrepos.dto.RepositoryResponse;
+import com.mistela.gitrepos.model.RepositoryResponse;
 import com.mistela.gitrepos.service.RestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -17,8 +17,9 @@ public class RequestController {
 
     private final RestService restService;
 
-    @GetMapping(value = "/api/v1/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/api/v1/users/{username}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Set<RepositoryResponse>> owner(@PathVariable String username) {
         return ResponseEntity.ok(restService.listReposBy(username));
     }
+
 }
