@@ -17,12 +17,9 @@ public class RequestControllerAdvice {
 
     @ExceptionHandler(HttpClientErrorException.class)
     public ResponseEntity<ErrorResponse> handleNoSuchElementFoundException() {
+        final ErrorResponse response = new ErrorResponse(HttpStatus.NOT_FOUND.value(), USER_NOT_EXIST_IN_GITHUB_MSG);
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(ErrorResponse.builder()
-                        .statusCode(HttpStatus.NOT_FOUND.value())
-                        .message(USER_NOT_EXIST_IN_GITHUB_MSG)
-                        .build()
-                );
+                .body(response);
     }
 }
