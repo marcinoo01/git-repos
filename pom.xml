@@ -20,9 +20,6 @@
         <!-- binding -->
         <javax.api.bind.version>2.2.6</javax.api.bind.version>
         <jackson.version>2.13.4</jackson.version>
-        <!-- mapstruct -->
-        <mapstruct.verson>1.5.2.Final</mapstruct.verson>
-        <mapstruct.processor.version>1.5.2.Final</mapstruct.processor.version>
     </properties>
     <dependencies>
         <dependency>
@@ -55,17 +52,6 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
             <version>${springfox-boot-starter.version}</version>
-        </dependency>
-        <!-- mapper !-->
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-            <version>${mapstruct.verson}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct-processor</artifactId>
-            <version>${mapstruct.processor.version}</version>
         </dependency>
     </dependencies>
     <build>
