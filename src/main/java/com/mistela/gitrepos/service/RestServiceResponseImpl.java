@@ -16,16 +16,19 @@ public final class RestServiceResponseImpl implements RestServiceResponse {
 
     private final RestServiceRequest restServiceRequest;
 
+    @Override
     public Set<RepositoryResponse> listReposBy(String username) {
 
         final Set<Repository> reposWhichAreNotForks = findReposWhichAreNotForks(username);
         final Set<RepositoryResponse> repositoryResponses = new HashSet<>();
 
-        reposWhichAreNotForks.forEach(repository -> {
-            Set<Branch> branchBody = restServiceRequest.findBranches(repository);
-            RepositoryResponse response = new RepositoryResponse(repository.fullName(), repository.name(), repository.owner(), branchBody);
-            repositoryResponses.add(response);
-        });
+        reposWhichAreNotForks
+                .forEach(repository -> {
+                            Set<Branch> branchBody = restServiceRequest.findBranches(repository);
+                            RepositoryResponse response = new RepositoryResponse(repository.fullName(), repository.name(), repository.owner(), branchBody);
+                            repositoryResponses.add(response);
+                        }
+                );
 
         return repositoryResponses;
     }
